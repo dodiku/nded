@@ -12,8 +12,8 @@ const initAudio = async () => {
             return createAudioBuffer('assets/audio/niggasgetshoteverydayb.wav')
         })
         .then(() => {
+            addPlayButton(playAudio)
             console.log('✅ all done')
-            return addPlayButton(playAudio)
         })
         .catch(error => {
             console.log('🐞 something went wrong... =>', error)
@@ -77,6 +77,7 @@ const changeButtonLabel = () => {
 
 const playAudio = () => {
     console.log('isPlaying:', isPlaying)
+    isPlaying = !isPlaying
 
     let promise
 
@@ -99,7 +100,6 @@ const playAudio = () => {
     if (promise !== undefined) {
         promise
             .then(_ => {
-                isPlaying = !isPlaying
                 changeButtonLabel()
                 // Autoplay started!
             })
