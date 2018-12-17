@@ -1,0 +1,39 @@
+body {
+    margin: 0;
+}
+
+button {
+    padding-top: 1em;
+    padding-bottom: 1em;
+    padding-right: 2em;
+    padding-left: 2em;
+    border-radius: 8px;
+    background-color: gold;
+    font-size: 9pt;
+    border-color: goldenrod;
+    font-weight: 900;
+    outline: none;
+}
+
+button:hover {
+    background-color: goldenrod;
+    cursor: pointer;
+}
+
+button:active {
+    background-color: darkgoldenrod
+    cursor: pointer;
+}
+
+.controls {
+    padding-top: 3em;
+    text-align: center;
+}
+
+.imagecontainer {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    /* bring your own prefixes */
+    transform: translate(-50%, -50%);
+}
