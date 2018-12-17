@@ -8,26 +8,30 @@ button {
     padding-right: 2em;
     padding-left: 2em;
     border-radius: 8px;
-    background-color: gold;
+    background-color: #f6f6f6;
     font-size: 9pt;
-    border-color: goldenrod;
+    border-color: #eaeaea;
     font-weight: 900;
     outline: none;
 }
 
 button:hover {
-    background-color: goldenrod;
+    background-color: #f0f0f0;
     cursor: pointer;
 }
 
 button:active {
-    background-color: darkgoldenrod
+    background-color: #e3e3e3;
     cursor: pointer;
 }
 
 .controls {
     padding-top: 3em;
     text-align: center;
+    position: fixed;
+    bottom: 12px;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
 .imagecontainer {
