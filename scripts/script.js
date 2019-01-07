@@ -4,11 +4,11 @@ let audioProperties = {
     currentPlayBackRate: 1,
     currentGain: 1,
 
-    startTimeDay: 16,
-    startTimeMonth: 11,
-    startTimeYear: 2018,
+    startTimeDay: 1,
+    startTimeMonth: 0,
+    startTimeYear: 2019,
 
-    DailyPlayBackRateChange: 0.05,
+    DailyPlayBackRateChange: 0.04,
     minimumSpeed: 0.0625,
 
     DaysInTheFuture: 0
@@ -22,7 +22,7 @@ window.onload = () => {
     initAudio()
 
     // debug gui
-    addGui()
+    // addGui()
 }
 
 const initAudio = async () => {
@@ -31,8 +31,14 @@ const initAudio = async () => {
             return createAudioBuffer('assets/audio/niggasgetshoteverydayb.wav')
         })
         .then(() => {
-            addPlayButton(playAudio)
+            // addPlayButton(playAudio, 'PLAY')
+            addPlayButton(muteAudio, 'UNMUTE')
+            muteAudio()
+            playAudio(false)
             console.log('✅ all done')
+        })
+        .then(() => {
+            draw()
         })
         .catch(error => {
             console.log('🐞 something went wrong... =>', error)

@@ -13,6 +13,9 @@ button {
     border-color: #eaeaea;
     font-weight: 900;
     outline: none;
+    display: block;
+    margin: auto;
+    min-width: 132px;
 }
 
 button:hover {
@@ -26,10 +29,9 @@ button:active {
 }
 
 .controls {
-    padding-top: 3em;
     text-align: center;
     position: fixed;
-    bottom: 12px;
+    bottom: -100px;
     left: 50%;
     transform: translate(-50%, -50%);
 }
@@ -40,4 +42,8 @@ button:active {
     left: 50%;
     /* bring your own prefixes */
     transform: translate(-50%, -50%);
+}
+
+#nded {
+    width: 65vw;
 }

@@ -57,7 +57,8 @@ const readAudioProperties = () => {
     console.log('👟 current playback rate:', sound.audio.playbackRate)
 }
 
-const playAudio = () => {
+const playAudio = changeButtonLabel => {
+    readAudioProperties()
     isPlaying = !isPlaying
     console.log('isPlaying:', isPlaying)
 
@@ -73,16 +74,16 @@ const playAudio = () => {
     // play or pause track depending on state
     if (isPlaying) {
         promise = sound.audio.play()
-        // changeButtonLabel()
+        // changePlayButtonLabel()
     } else {
         promise = sound.audio.pause()
-        changeButtonLabel()
+        changeButtonLabel && changePlayButtonLabel()
     }
 
     if (promise !== undefined) {
         promise
             .then(_ => {
-                changeButtonLabel()
+                changeButtonLabel && changePlayButtonLabel()
                 // Autoplay started!
             })
             .catch(error => {
@@ -90,5 +91,17 @@ const playAudio = () => {
                 // Show a "Play" button so that user can start playback.
                 console.log('ERROR:', error)
             })
+    }
+}
+
+const muteAudio = () => {
+    if (sound.gain.gain.value === 0) {
+        sound.gain.gain.value = 1
+        changeMuteButtonLabel(true)
+        console.log('🔊 unmuted')
+    } else {
+        sound.gain.gain.value = 0
+        changeMuteButtonLabel(false)
+        console.log('🔇 muted')
     }
 }
