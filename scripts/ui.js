@@ -7,7 +7,7 @@ const addPlayButton = (func, buttonLabel) => {
     document.getElementsByClassName('controls')[0].appendChild(playButton)
 
     document.getElementById('playButton').addEventListener('click', () => {
-        func()
+        func(true)
     })
     console.log('▶️ button added')
 

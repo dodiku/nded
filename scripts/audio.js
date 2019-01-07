@@ -94,14 +94,14 @@ const playAudio = changeButtonLabel => {
     }
 }
 
-const muteAudio = () => {
+const muteAudio = changeButtonLabel => {
     if (sound.gain.gain.value === 0) {
         sound.gain.gain.value = 1
-        changeMuteButtonLabel(true)
+        changeButtonLabel && changeMuteButtonLabel(true)
         console.log('🔊 unmuted')
     } else {
         sound.gain.gain.value = 0
-        changeMuteButtonLabel(false)
+        changeButtonLabel && changeMuteButtonLabel(false)
         console.log('🔇 muted')
     }
 }

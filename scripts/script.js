@@ -31,10 +31,10 @@ const initAudio = async () => {
             return createAudioBuffer('assets/audio/niggasgetshoteverydayb.wav')
         })
         .then(() => {
-            // addPlayButton(playAudio, 'PLAY')
-            addPlayButton(muteAudio, 'UNMUTE')
-            muteAudio()
-            playAudio(false)
+            addPlayButton(playAudio, 'PLAY')
+            // addPlayButton(muteAudio, 'UNMUTE')
+            // muteAudio(true)
+            // playAudio(true)
             console.log('✅ all done')
         })
         .then(() => {
