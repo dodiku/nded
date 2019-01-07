@@ -1,17 +1,19 @@
 const addPlayButton = (func, buttonLabel) => {
-    playButton = document.createElement('button')
-    playButton.textContent = '▶ ' + buttonLabel
-    playButton.className = 'playButton'
-    playButton.id = 'playButton'
+    if (!document.getElementById('playButton')) {
+        playButton = document.createElement('button')
+        playButton.textContent = '▶ ' + buttonLabel
+        playButton.className = 'playButton'
+        playButton.id = 'playButton'
 
-    document.getElementsByClassName('controls')[0].appendChild(playButton)
+        document.getElementsByClassName('controls')[0].appendChild(playButton)
 
-    document.getElementById('playButton').addEventListener('click', () => {
-        func(true)
-    })
-    console.log('▶️ button added')
+        document.getElementById('playButton').addEventListener('click', () => {
+            func(true)
+        })
+        console.log('▶️ button added')
 
-    addOscilloscope(document.getElementsByClassName('controls')[0])
+        addOscilloscope(document.getElementsByClassName('controls')[0])
+    }
 }
 
 const changePlayButtonLabel = () => {
@@ -29,6 +31,7 @@ const changeMuteButtonLabel = state => {
 const addOscilloscope = parentElement => {
     let canvas = document.createElement('canvas')
     canvas.id = 'oscilloscope'
+    canvas.height = 110
     parentElement.appendChild(canvas)
     console.log('〰 oscilloscope added')
 }
@@ -56,7 +59,6 @@ const draw = () => {
 
     sound.analyser.getByteTimeDomainData(sound.dataArray)
     let canvas = document.getElementById('oscilloscope')
-    canvas.height = 110
     let canvas2dContext = canvas.getContext('2d')
     let bufferLength = sound.analyser.frequencyBinCount
 
