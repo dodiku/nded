@@ -56,6 +56,7 @@ const draw = () => {
 
     sound.analyser.getByteTimeDomainData(sound.dataArray)
     let canvas = document.getElementById('oscilloscope')
+    canvas.height = 110
     let canvas2dContext = canvas.getContext('2d')
     let bufferLength = sound.analyser.frequencyBinCount
 
