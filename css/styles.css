@@ -43,7 +43,3 @@ button:active {
     /* bring your own prefixes */
     transform: translate(-50%, -50%);
 }
-
-#nded {
-    width: 45vw;
-}
